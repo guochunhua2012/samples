@@ -40,7 +40,7 @@ print(yueyue.course)
 # 注意成员函数的调用没有传递进入参数
 yueyue.doHomework()
 
-# 打印查看Python类内所有的成员
+# 打印查看PythonStudent类内所有的成员
 print(PythonStudent.__dict__)
 
 import random
@@ -57,6 +57,8 @@ class A():
     def say(self):
         self.name = "guochunhua"
         self.age = 30
+
+
 # 此案例说明
 '''
 类实例的属性（A.name）和其对象实例的属性（a.name），如果不进行对象的实例属性赋值（a.name！= "xxx"）,
@@ -69,7 +71,7 @@ print(A.age)
 
 print("-" * 30)
 
-# id 可以鉴别一个变量与另外一个变量 是否为同一个变量
+# id 可以鉴别两个变量 是否为同一个变量
 print(id(A.name))
 print(id(A.age))
 
@@ -178,9 +180,9 @@ class MyInfo():
 
 wo = MyInfo()
 wo.nowSelf()
-# 访问绑定类的方法时，使用对象名.访问时出错。
+# 访问绑定类的方法时，使用对象名.函数名 访问时出错。
 # wo.nowBefor()
-# 访问绑定类方法时 需使用类名.访问。
+# 访问绑定类方法时 需使用类名.函数名 访问。
 
 MyInfo.nowBefor()
 
@@ -230,6 +232,8 @@ class Person():
     # __age 就是私有成员，在age前面添加两个下划线即可
     __age = 18
 
+    _stature = "slender"
+
 p = Person()
 # name 作为公有变量，在外部访问，没毛病...
 print(p.name)
@@ -240,8 +244,19 @@ print(p.name)
 # 查看类内所有成员
 print(Person.__dict__)
 p._Person__age = 180
+# private 私有
 print(p._Person__age)
 print(Person.__dict__)
+
+# protected 受保护的
+print(Person.__dict__)
+p._stature = "tall"
+print(p._stature)
+print(Person.__dict__)
+
+
+
+
 
 
 
